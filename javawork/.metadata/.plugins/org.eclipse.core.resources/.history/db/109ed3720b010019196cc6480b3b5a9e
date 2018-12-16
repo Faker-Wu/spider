@@ -1,0 +1,34 @@
+package com.spider;
+
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+public class App {
+        //alt+/
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//目标url
+		String url = "https://movie.douban.com/top250";
+       //抓取jsoup抓取文档
+		try {
+			Document doc = Jsoup.connect("url").get();
+			
+			Elements es=doc.select("a");
+			System.out.println(es.size());
+			
+//			String title=doc.title();
+//			String data=doc.data();
+//			
+//			System.out.println(title);
+//			System.out.println(data);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
